@@ -9,7 +9,7 @@ import java.io.IOException;
 public class Upgrade extends JButton {
 
     private int price;
-    private String name;
+    private String upgradeName;
     private String description;
 
 
@@ -24,7 +24,7 @@ public class Upgrade extends JButton {
     String imgPath) {
         super(label);
 
-        name = label;
+        upgradeName = label;
         price = _price;
         description = _description;
 
@@ -47,7 +47,7 @@ public class Upgrade extends JButton {
     public Upgrade(String label, int x, int y, int width, int height, int _price, String _description) {
         super(label);
 
-        name = label;
+        upgradeName = label;
         price = _price;
         description = _description;
 
@@ -66,7 +66,32 @@ public class Upgrade extends JButton {
 
     //Basic onCLick (Override in subclasses)
     public void onClick(){
-        System.out.println(name + " clicked!");
+        System.out.println(upgradeName + " clicked!");
+    }
+
+    @Override
+    public String toString() {
+        return "Upgrade{" +
+                "price=" + price +
+                ", upgradeName='" + upgradeName + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getUpgradeName() {
+        return upgradeName;
+    }
+
+    public void setUpgradeName(String upgradeName) {
+        this.upgradeName = upgradeName;
     }
 
     //Sets icon of the Button
@@ -85,5 +110,13 @@ public class Upgrade extends JButton {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 }
