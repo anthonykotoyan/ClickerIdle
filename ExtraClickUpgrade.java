@@ -1,32 +1,28 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class Upgrade extends JButton {
+public class ExtraClickUpgrade extends JButton {
 
     private int price;
     private String upgradeName;
     private String description;
+    private int extraClicks;
 
 
-    //No argument constructor
-    public Upgrade() {
-        this("New Button", 0, 0, 100, 50,
-                0, "New Button Description");
-    }
+
 
     // Constructor for an upgrade with an image
-    public Upgrade(String label, int x, int y, int width, int height, int _price, String _description,
-    String imgPath) {
+    public ExtraClickUpgrade(JPanel panel, int _extraClicks, String label, int x, int y, int width, int height, int _price, String _description,
+                             String imgPath) {
         super(label);
 
         upgradeName = label;
         price = _price;
         description = _description;
+        extraClicks = _extraClicks;
 
         setIcon(imgPath, width, height);
 
@@ -35,16 +31,12 @@ public class Upgrade extends JButton {
         // Set the position and size of the button
         this.setBounds(x, y, width, height);
         // Add an action listener for button events
-        this.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                onClick();
-            }
-        });
+        this.addActionListener(e -> onClick());
+        panel.add(this);
     }
 
     // Constructor for an upgrade without an image
-    public Upgrade(String label, int x, int y, int width, int height, int _price, String _description) {
+    public ExtraClickUpgrade(JPanel panel, int extraClicks, String label, int x, int y, int width, int height, int _price, String _description) {
         super(label);
 
         upgradeName = label;
@@ -56,17 +48,20 @@ public class Upgrade extends JButton {
         // Set the position and size of the button
         this.setBounds(x, y, width, height);
         // Add an action listener for button events
-        this.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                onClick();
-            }
-        });
+        this.addActionListener(e -> onClick());
+        panel.add(this);
     }
 
     //Basic onCLick (Override in subclasses)
     public void onClick(){
-        System.out.println(upgradeName + " clicked!");
+        int currentMoney = Main.getMoney();
+        if (currentMoney>=price){
+            Clicker.addMoneyPerClick(extraClicks);
+            Clicker.setNumClicks(currentMoney-price);
+
+        } else{
+            System.out.println("You do not have enough money for the " + upgradeName + " Upgrade!");
+        }
     }
 
     @Override
