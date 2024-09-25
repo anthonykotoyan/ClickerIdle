@@ -25,13 +25,10 @@ This project is a **Cookie Clicker** style game developed as part of a school as
 1. Clone the repository:
    ```bash
    git clone https://github.com/anthonykotoyan/ClickerIdle.git
-  ```
 2. Navigate to the project folder:
    ```bash
    cd ClickerIdle
-   ```
 3. Compile and run the program:
    ```bash
    javac Main.java
    java Main
-   ```
