@@ -13,11 +13,13 @@ public class Main {
         panel.setLayout(null);
 
         // Add custom buttons with specific positions
-        Upgrade button1 = new Upgrade("Button 1", 50, 50, 100, 40, 0, "");
-        Upgrade button2 = new Upgrade("Button 2", 200, 100, 100, 40, 0, "");
+        Upgrade button1 = new Upgrade("Nash", 5, 50, 100, 100, 0, "", "nash.jpg");
+        Upgrade button2 = new Upgrade("Empty Upgrade", 200, 100, 100, 40, 0, "");
+        Upgrade button3 = new Upgrade();
 
         panel.add(button1);
         panel.add(button2);
+        panel.add(button3);
 
         frame.add(panel);
         frame.setVisible(true);
