@@ -11,11 +11,11 @@ public class AutoClicker extends Upgrade {
 
     // No-argument constructor
     public AutoClicker() {
-        super("AutoClicker", 0, 0, 100, 50, 10, "Increases your clicks per second.", "images/caf-fein.png");
+        super("AutoClicker", 0, 0, 100, 50, new Price() , "Increases your clicks per second.", "images/caf-fein.png");
     }
 
     // Constructor with specific parameters
-    public AutoClicker(JPanel panel, String label, int _delay, int _costMultiplier, int x, int y, int width, int height, int _price, String _description, String _imgPath) {
+    public AutoClicker(JPanel panel, String label, int _delay, int _costMultiplier, int x, int y, int width, int height, Price _price, String _description, String _imgPath) {
         super(label, x, y, width, height, _price, _description, _imgPath);
 
 
@@ -53,11 +53,11 @@ public class AutoClicker extends Upgrade {
     @Override
     public void onClick() throws IOException {
         int currentMoney = Main.getMoney();
-        if (currentMoney >= getPrice()) {
-            Clicker.setNumClicks(currentMoney - getPrice());
+        if (currentMoney >= getPrice().getPrice()) {
+            Clicker.setNumClicks(currentMoney - getPrice().getPrice());
 
             // Update the price after the purchase
-            setPrice((int) (getPrice() * costMultiplier));
+            getPrice().updatePrice();
             setAmountUsed(getAmountUsed()+1);
             updateLabels();
             updateMoneyLabel();
@@ -76,7 +76,7 @@ public class AutoClicker extends Upgrade {
     }
 
     private void updateLabels() {
-        getPriceLabel().setText("Price: " + getPrice());
+        getPriceLabel().setText("Price: " + getPrice().getPrice());
         cpsLabel.setText(delay + "s: $" + Clicker.getMoneyPerClick() * getAmountUsed());
         getAmountUsedLabel().setText("You own " + getAmountUsed() + " of these.");
     }

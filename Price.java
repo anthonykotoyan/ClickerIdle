@@ -20,6 +20,11 @@ public class Price {
         this.type = type;
         this.modifier = modifier;
     }
+    public Price(){
+        this.price = 10;
+        this.type = "+";
+        this.modifier = 1;
+    }
 
     public void updatePrice(){
         if (type == "+"){

@@ -12,7 +12,7 @@ public class Upgrade extends JButton {
     private int amountUsed = 0;
     private JLabel amountUsedLabel;
     private JLabel priceLabel;
-    private int price;
+    private Price price;
     private String upgradeName;
     private String description;
     private String imgPath;
@@ -21,7 +21,7 @@ public class Upgrade extends JButton {
     //No argument constructor
     public Upgrade() {
         this("New Button", 0, 0, 100, 50,
-                0, "New Button Description", "images/nash.jpg");
+                new Price(), "New Button Description", "images/nash.jpg");
     }
 
     public int getAmountUsed() {
@@ -49,7 +49,7 @@ public class Upgrade extends JButton {
     }
 
     // Constructor for an upgrade with an image
-    public Upgrade(String label, int x, int y, int width, int height, int _price, String _description,
+    public Upgrade(String label, int x, int y, int width, int height, Price _price, String _description,
                    String _imgPath) {
         super(label);
 
@@ -76,7 +76,7 @@ public class Upgrade extends JButton {
             }
         });
 
-        priceLabel = new JLabel("Price: " + getPrice());
+        priceLabel = new JLabel("Price: " + getPrice().getPrice());
         priceLabel.setBounds(x, y + height + 5, width, 20);
 
         amountUsedLabel = new JLabel("You own " + amountUsed + " of these.");
@@ -86,7 +86,7 @@ public class Upgrade extends JButton {
     //Basic onCLick (Override in subclasses)
     public void onClick() throws IOException {
         int currentMoney = Main.getMoney();
-        if (currentMoney >= getPrice()) {
+        if (currentMoney >= getPrice().getPrice()) {
             Main.displayWarning("", "images/guillaume.jpg");
         } else {
             Main.displayWarning("You do not have enough money for this", "images/tobadsosad.png");
@@ -136,14 +136,15 @@ public class Upgrade extends JButton {
         }
     }
 
-    public int getPrice() {
+    public Price getPrice() {
         return price;
     }
 
+    /*
     public void setPrice(int price) {
         this.price = price;
     }
-
+    */
     public void updateMoneyLabel() {
         Main.getClicker().updateMoneyLabel();
     }

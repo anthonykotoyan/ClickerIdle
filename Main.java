@@ -29,12 +29,14 @@ public class Main {
 
         panel = new JPanel();
         panel.setLayout(null);
+        Price nashPrice = new Price(10, "+", 10);
+        ExtraClickUpgrade nashUpgrade = new ExtraClickUpgrade(panel, 1, 5, "Mr. Nash", 0, 0, 100, 100, nashPrice, "Our Beautiful Principle, get 1 extra dollar per click", "images/nash.jpg");
 
-        ExtraClickUpgrade nashUpgrade = new ExtraClickUpgrade(panel, 1, 5, "Mr. Nash", 0, 0, 100, 100, 10, "Our Beautiful Principle, get 1 extra dollar per click", "images/nash.jpg");
+        Price neekuPrice = new Price(20, "*", 5);
+        ExtraClickUpgrade neekuUpgrade = new ExtraClickUpgrade(panel, 5,10,"Neeku", 150, 0, 100, 100, neekuPrice, "Kinda stinky, but gives 2 extra dollars per click, costs 10x more after every purchase", "images/neekthegeek.jpg");
 
-        ExtraClickUpgrade neekuUpgrade = new ExtraClickUpgrade(panel, 5,10,"Neeku", 150, 0, 100, 100, 20, "Kinda stinky, but gives 2 extra dollars per click, costs 10x more after every purchase", "images/neekthegeek.jpg");
-
-        AutoClicker issacUpgrade = new AutoClicker(panel, "Isaac", 3, 2,300, 0, 100, 100, 0, "So hopped up on caffeine he just clicks once every 3s", "images/caf-fein.png");
+        Price isaacPrice = new Price(100, "+", 100);
+        AutoClicker issacUpgrade = new AutoClicker(panel, "Isaac", 1, 2,300, 0, 100, 100, isaacPrice, "So hopped up on caffeine he just clicks once every 3s", "images/caf-fein.png");
 
         guillaumeClicker = new Clicker(panel, width / 2 - 50, height / 2 - 50, 100, 100, "images/guillaume.jpg");
 
