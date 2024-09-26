@@ -40,39 +40,23 @@ public class Upgrade extends JButton {
         this.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                onClick();
-            }
-        });
-
-        this.addMouseListener(new java.awt.event.MouseAdapter() {
-            @Override
-            public void mousePressed(MouseEvent evt) {
-                if (evt.getButton() == MouseEvent.BUTTON3) { // Right-click
-                    try {
-                        onRightClick();
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
+                try {
+                    onClick();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
                 }
             }
         });
     }
 
-    private void onRightClick() throws IOException {
-        displayDesc();
-    }
-
-    private void displayDesc() throws IOException {
-        BufferedImage img = ImageIO.read(new File(imgPath));
-
-        Image scaledImage = img.getScaledInstance(100, 100, Image.SCALE_SMOOTH);
-        ImageIcon icon = new ImageIcon(scaledImage);
-        JOptionPane.showMessageDialog(this, description, upgradeName, JOptionPane.INFORMATION_MESSAGE, icon);
-    }
-
     //Basic onCLick (Override in subclasses)
-    public void onClick(){
-        System.out.println(upgradeName + " clicked!");
+    public void onClick() throws IOException {
+        int currentMoney = Main.getMoney();
+        if (currentMoney >= getPrice()) {
+            Main.displayWarning("", "guillaume.png");
+        } else {
+            Main.displayWarning("You do not have enough money for this", "tobadsosad.png");
+        }
     }
 
     @Override
