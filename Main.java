@@ -34,7 +34,7 @@ public class Main {
 
         ExtraClickUpgrade neekuUpgrade = new ExtraClickUpgrade(panel, 5,10,"Neeku", 150, 0, 100, 100, 20, "Kinda stinky, but gives 2 extra dollars per click, costs 10x more after every purchase", "images/neekthegeek.jpg");
 
-        AutoClicker issacUpgrade = new AutoClicker(panel, "Isaac", 3, 2,300, 0, 100, 100, 0, "So hopped up on caffeine he just clicks once every 3s", "images/caf-fein.png");
+        AutoClicker issacUpgrae = new AutoClicker(panel, "Isaac", 3, 2,300, 0, 100, 100, 0, "So hopped up on caffeine he just clicks once every 3s", "images/caf-fein.png");
 
         guillaumeClicker = new Clicker(panel, width / 2 - 50, height / 2 - 50, 100, 100, "images/guillaume.jpg");
 
