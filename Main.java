@@ -1,5 +1,4 @@
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 public class Main {
     private static int money;
@@ -17,7 +16,7 @@ public class Main {
 
         // Add custom buttons with specific positions
         ExtraClickUpgrade nashUpgrade = new ExtraClickUpgrade(panel, 1,"Nash", 0, 0, 100, 100, 10, "Our Beautiful Principle", "nash.jpg");
-        Clicker guillaumeClicker = new Clicker(panel, width/2 - 50, height/2 - 50, 100,100, "guilluame.jpg");
+        Clicker guillaumeClicker = new Clicker(panel, width/2 - 50, height/2 - 50, 100,100, "guilliame.jpg");
 
 
 
