@@ -37,4 +37,5 @@ public class Price {
             price = (int) Math.pow(price, modifier);
         }
     }
+
 }
