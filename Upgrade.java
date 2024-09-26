@@ -60,6 +60,8 @@ public class Upgrade extends JButton {
 
         setIcon(imgPath, width, height);
 
+        this.setToolTipText(upgradeName + ", " + description);
+
         // Set the position and size of the button
         this.setBounds(x, y, width, height);
         // Add an action listener for button events

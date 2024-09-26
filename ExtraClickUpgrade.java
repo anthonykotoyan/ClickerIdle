@@ -17,9 +17,6 @@ public class ExtraClickUpgrade extends Upgrade {
         extraClicksLabel = new JLabel("Extra Clicks: " + extraClicks);
         extraClicksLabel.setBounds(x, y + height + 45, width, 20);
 
-        // Tooltip for description
-        this.setToolTipText(getDescription());
-
         // Add the button and labels to the panel
         panel.add(this);
         panel.add(getPriceLabel());

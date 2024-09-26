@@ -1,8 +1,6 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -32,11 +30,11 @@ public class Main {
         panel = new JPanel();
         panel.setLayout(null);
 
-        ExtraClickUpgrade nashUpgrade = new ExtraClickUpgrade(panel, 1, 5, "Nash", 0, 0, 100, 100, 10, "Our Beautiful Principle, adds 1 extra click", "images/nash.jpg");
+        ExtraClickUpgrade nashUpgrade = new ExtraClickUpgrade(panel, 1, 5, "Mr. Nash", 0, 0, 100, 100, 10, "Our Beautiful Principle, get 1 extra dollar per click", "images/nash.jpg");
 
-        ExtraClickUpgrade neekuUpgrade = new ExtraClickUpgrade(panel, 5,10,"Neeku", 150, 0, 100, 100, 20, "Kinda stinky, but gives plus two money per click, costs 5x more after every purchase", "images/neekthegeek.jpg");
+        ExtraClickUpgrade neekuUpgrade = new ExtraClickUpgrade(panel, 5,10,"Neeku", 150, 0, 100, 100, 20, "Kinda stinky, but gives 2 extra dollars per click, costs 10x more after every purchase", "images/neekthegeek.jpg");
 
-        AutoClicker issac = new AutoClicker(panel, "AutoClicker", 300, 0, 100, 100, 1, "haha", "images/caf-fein.png");
+        AutoClicker issacUpgrade = new AutoClicker(panel, "Isaac", 3, 300, 0, 100, 100, 0, "So hopped up on caffeine he just clicks once every 3s", "images/caf-fein.png");
 
         guillaumeClicker = new Clicker(panel, width / 2 - 50, height / 2 - 50, 100, 100, "images/guillaume.jpg");
 

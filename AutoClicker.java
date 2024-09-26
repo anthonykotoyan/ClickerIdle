@@ -5,20 +5,28 @@ import java.io.IOException;
 
 public class AutoClicker extends Upgrade {
 
+    private JLabel cpsLabel;
+    private int delay;
+
     // No-argument constructor
     public AutoClicker() {
         super("AutoClicker", 0, 0, 100, 50, 10, "Increases your clicks per second.", "images/caf-fein.png");
     }
 
     // Constructor with specific parameters
-    public AutoClicker(JPanel panel, String label, int x, int y, int width, int height, int _price, String _description, String _imgPath) {
+    public AutoClicker(JPanel panel, String label, int _delay, int x, int y, int width, int height, int _price, String _description, String _imgPath) {
         super(label, x, y, width, height, _price, _description, _imgPath);
 
         panel.add(this);
         panel.add(getPriceLabel());
         panel.add(getAmountUsedLabel());
 
-        Timer timer = new Timer(3000, new ActionListener() {
+        delay = _delay;
+
+        cpsLabel = new JLabel(delay + "s: $0");
+        cpsLabel.setBounds(x, y + height + 45, width, 20);
+
+        Timer timer = new Timer(_delay * 1000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 autoClickersClick();
@@ -26,6 +34,8 @@ public class AutoClicker extends Upgrade {
         });
 
         timer.start();
+
+        panel.add(cpsLabel);
     }
 
     private void autoClickersClick() {
@@ -63,6 +73,7 @@ public class AutoClicker extends Upgrade {
 
     private void updateLabels() {
         getPriceLabel().setText("Price: " + getPrice());
+        cpsLabel.setText(delay + "s: $" + Clicker.getMoneyPerClick() * getAmountUsed());
         getAmountUsedLabel().setText("You own " + getAmountUsed() + " of these.");
     }
 }
