@@ -38,9 +38,6 @@ public class Main {
         Price isaacPrice = new Price(100, "+", 100);
         AutoClicker issacUpgrade = new AutoClicker(panel, "Isaac", 1, 2,300, 0, 100, 100, isaacPrice, "So hopped up on caffeine he just clicks once every 3s", "images/caf-fein.png");
 
-        Price issaraPrice = new Price(0, "+", 0);
-        MultiplyPowerUp issaraPowerUp = new MultiplyPowerUp(panel, 5, 100,"Issara", 450, 0,100, 100, issaraPrice, "Kinda bad at coding, but he gets the job done", "images/verosity.jpeg");
-
         guillaumeClicker = new Clicker(panel, width / 2 - 100, height / 2 - 100, 200, 200, "images/guillaume.jpg");
 
         frame.add(panel);

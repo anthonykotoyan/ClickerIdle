@@ -24,7 +24,9 @@ public class Clicker extends JButton {
         panel.add(this);
     }
 
-
+    public static int getMoneyPerClick() {
+        return moneyPerClick;
+    }
 
     private void setIcon(String path, int w, int h) {
         try {
@@ -57,20 +59,11 @@ public class Clicker extends JButton {
         Main.setMoney(numClicks);
     }
 
-
     public static void addMoneyPerClick(int extraClicks) {
         moneyPerClick += extraClicks;
     }
 
     public JLabel getMoneyLabel() {
         return moneyLabel;
-    }
-
-    public static int getMoneyPerClick() {
-        return moneyPerClick;
-    }
-
-    public static void setMoneyPerClick(int moneyPerClick) {
-        Clicker.moneyPerClick = moneyPerClick;
     }
 }
