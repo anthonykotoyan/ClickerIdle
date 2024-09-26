@@ -38,7 +38,7 @@ public class Main {
         Price isaacPrice = new Price(100, "+", 100);
         AutoClicker issacUpgrade = new AutoClicker(panel, "Isaac", 1, 2,300, 0, 100, 100, isaacPrice, "So hopped up on caffeine he just clicks once every 3s", "images/caf-fein.png");
 
-        guillaumeClicker = new Clicker(panel, width / 2 - 50, height / 2 - 50, 100, 100, "images/guillaume.jpg");
+        guillaumeClicker = new Clicker(panel, width / 2 - 100, height / 2 - 100, 200, 200, "images/guillaume.jpg");
 
         frame.add(panel);
         frame.setVisible(true);
