@@ -20,6 +20,10 @@ public class Main {
         frame.setSize(width, height);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        BufferedImage img = ImageIO.read(new File("images/guillaume.jpg"));
+        Image scaledImage = img.getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+        frame.setIconImage(scaledImage);
+
         panel = new JPanel();
         panel.setLayout(null);
 
