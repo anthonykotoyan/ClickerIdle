@@ -8,7 +8,7 @@ public class Clicker extends JButton {
     private static int moneyPerClick = 1;
     private static int numClicks = 0;
 
-    private JLabel moneyLabel;
+    private static JLabel moneyLabel;
 
     public Clicker(JPanel panel, int x, int y, int width, int height, String imgPath) {
         super("Clicker");
@@ -24,6 +24,10 @@ public class Clicker extends JButton {
         panel.add(this);
     }
 
+    public static int getMoneyPerClick() {
+        return moneyPerClick;
+    }
+
     private void setIcon(String path, int w, int h) {
         try {
             BufferedImage img = ImageIO.read(new File(path));
@@ -36,13 +40,13 @@ public class Clicker extends JButton {
         }
     }
 
-    public void onClick() {
+    public static void onClick() {
         numClicks += moneyPerClick;
         Main.setMoney(numClicks);
         updateMoneyLabel();
     }
 
-    public void updateMoneyLabel() {
+    public static void updateMoneyLabel() {
         moneyLabel.setText("Money: " + numClicks);
     }
 

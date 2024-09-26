@@ -1,9 +1,12 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Random;
 
 public class Main {
     private static int money;
@@ -11,8 +14,10 @@ public class Main {
     private static JPanel panel;
 
     private static String title = "Clicker";
+    private static Random random;
 
     public static void main(String[] args) throws IOException {
+        random = new Random();
         JFrame frame = new JFrame(title);
         int width = 1200;
         int height = 800;
@@ -31,12 +36,15 @@ public class Main {
 
         ExtraClickUpgrade neekuUpgrade = new ExtraClickUpgrade(panel, 5,10,"Neeku", 150, 0, 100, 100, 20, "Kinda stinky, but gives plus two money per click, costs 5x more after every purchase", "images/neekthegeek.jpg");
 
+        AutoClicker issac = new AutoClicker(panel, "AutoClicker", 300, 0, 100, 100, 1, "haha", "images/caf-fein.png");
+
         guillaumeClicker = new Clicker(panel, width / 2 - 50, height / 2 - 50, 100, 100, "images/guillaume.jpg");
 
         frame.add(panel);
         frame.setVisible(true);
 
         displayWarning( "Click on Mr. Guillaume and buy upgrades \n Evan and Anthony are the best programmers in this class :)", "images/guillaume.jpg");
+
     }
 
     public static void setMoney(int numClicks) {

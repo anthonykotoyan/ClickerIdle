@@ -9,6 +9,9 @@ import java.io.IOException;
 
 public class Upgrade extends JButton {
 
+    private int amountUsed = 0;
+    private JLabel amountUsedLabel;
+    private JLabel priceLabel;
     private int price;
     private String upgradeName;
     private String description;
@@ -19,6 +22,30 @@ public class Upgrade extends JButton {
     public Upgrade() {
         this("New Button", 0, 0, 100, 50,
                 0, "New Button Description", "images/nash.jpg");
+    }
+
+    public int getAmountUsed() {
+        return amountUsed;
+    }
+
+    public void setAmountUsed(int amountUsed) {
+        this.amountUsed = amountUsed;
+    }
+
+    public JLabel getAmountUsedLabel() {
+        return amountUsedLabel;
+    }
+
+    public void setAmountUsedLabel(JLabel amountUsedLabel) {
+        this.amountUsedLabel = amountUsedLabel;
+    }
+
+    public JLabel getPriceLabel() {
+        return priceLabel;
+    }
+
+    public void setPriceLabel(JLabel priceLabel) {
+        this.priceLabel = priceLabel;
     }
 
     // Constructor for an upgrade with an image
@@ -46,6 +73,12 @@ public class Upgrade extends JButton {
                 }
             }
         });
+
+        priceLabel = new JLabel("Price: " + getPrice());
+        priceLabel.setBounds(x, y + height + 5, width, 20);
+
+        amountUsedLabel = new JLabel("You own " + amountUsed + " of these.");
+        amountUsedLabel.setBounds(x, y + height + 25, width * 2, 20);
     }
 
     //Basic onCLick (Override in subclasses)
@@ -107,5 +140,9 @@ public class Upgrade extends JButton {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public void updateMoneyLabel() {
+        Main.getClicker().updateMoneyLabel();
     }
 }
