@@ -23,16 +23,16 @@ public class Main {
         panel = new JPanel();
         panel.setLayout(null);
 
-        ExtraClickUpgrade nashUpgrade = new ExtraClickUpgrade(panel, 1, 5, "Nash", 0, 0, 100, 100, 10, "Our Beautiful Principle, adds 1 extra click", "nash.jpg");
+        ExtraClickUpgrade nashUpgrade = new ExtraClickUpgrade(panel, 1, 5, "Nash", 0, 0, 100, 100, 10, "Our Beautiful Principle, adds 1 extra click", "images/nash.jpg");
 
-        ExtraClickUpgrade neekuUpgrade = new ExtraClickUpgrade(panel, 5,10,"Neeku", 150, 0, 100, 100, 20, "Kinda stinky, but gives plus two money per click, costs 5x more after every purchase", "neekthegeek.jpg");
+        ExtraClickUpgrade neekuUpgrade = new ExtraClickUpgrade(panel, 5,10,"Neeku", 150, 0, 100, 100, 20, "Kinda stinky, but gives plus two money per click, costs 5x more after every purchase", "images/neekthegeek.jpg");
 
-        guillaumeClicker = new Clicker(panel, width / 2 - 50, height / 2 - 50, 100, 100, "guillaume.jpg");
+        guillaumeClicker = new Clicker(panel, width / 2 - 50, height / 2 - 50, 100, 100, "images/guillaume.jpg");
 
         frame.add(panel);
         frame.setVisible(true);
 
-        displayWarning( "Click on Mr. Guillaume and collect upgrades \n Evan and Anthony are the best programmers in this class :)", "guillaume.jpg");
+        displayWarning( "Click on Mr. Guillaume and buy upgrades \n Evan and Anthony are the best programmers in this class :)", "images/guillaume.jpg");
     }
 
     public static void setMoney(int numClicks) {

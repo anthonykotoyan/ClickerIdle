@@ -1,6 +1,4 @@
 import javax.swing.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 
 public class ExtraClickUpgrade extends Upgrade {
@@ -53,7 +51,7 @@ public class ExtraClickUpgrade extends Upgrade {
             updateLabels();
             updateMoneyLabel();
         } else {
-            Main.displayWarning("You do not have enough money for this", "tobadsosad.png");
+            Main.displayWarning("You do not have enough money for this", "images/tobadsosad.png");
         }
     }
 

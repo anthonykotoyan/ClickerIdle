@@ -3,7 +3,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -19,7 +18,7 @@ public class Upgrade extends JButton {
     //No argument constructor
     public Upgrade() {
         this("New Button", 0, 0, 100, 50,
-                0, "New Button Description", "nash.jpg");
+                0, "New Button Description", "images/nash.jpg");
     }
 
     // Constructor for an upgrade with an image
@@ -53,9 +52,9 @@ public class Upgrade extends JButton {
     public void onClick() throws IOException {
         int currentMoney = Main.getMoney();
         if (currentMoney >= getPrice()) {
-            Main.displayWarning("", "guillaume.png");
+            Main.displayWarning("", "images/guillaume.jpg");
         } else {
-            Main.displayWarning("You do not have enough money for this", "tobadsosad.png");
+            Main.displayWarning("You do not have enough money for this", "images/tobadsosad.png");
         }
     }
 
