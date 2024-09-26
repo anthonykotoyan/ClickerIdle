@@ -1,9 +1,11 @@
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class Main {
     private static int money;
+    private static Clicker guillaumeClicker;
+
     public static void main(String[] args) {
-        // Create the main frame
         JFrame frame = new JFrame("Custom Button Example");
         int width = 1200;
         int height = 800;
@@ -11,28 +13,29 @@ public class Main {
         frame.setSize(width, height);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Create a panel with null layout for absolute positioning
         JPanel panel = new JPanel();
+        panel.setLayout(null);
 
-        // Add custom buttons with specific positions
-        ExtraClickUpgrade nashUpgrade = new ExtraClickUpgrade(panel, 1,"Nash", 0, 0, 100, 100, 10, "Our Beautiful Principle", "nash.jpg");
-        Clicker guillaumeClicker = new Clicker(panel, width/2 - 50, height/2 - 50, 100,100, "guilliame.jpg");
+        ExtraClickUpgrade nashUpgrade = new ExtraClickUpgrade(panel, 1, 5, "Nash", 0, 0, 100, 100, 10, "Our Beautiful Principle, adds 1 extra click", "nash.jpg");
 
+        ExtraClickUpgrade neekuUpgrade = new ExtraClickUpgrade(panel, 5,10,"Neeku", 150, 0, 100, 100, 20, "Kinda stinky, but gives plus two money per click, costs 5x more after every purchase", "neekthegeek.jpg");
 
-
+        guillaumeClicker = new Clicker(panel, width / 2 - 50, height / 2 - 50, 100, 100, "guilluame.jpg");
 
         frame.add(panel);
         frame.setVisible(true);
-
-
     }
-    public static void setMoney(int numClicks){
 
+    public static void setMoney(int numClicks) {
         money = numClicks;
-        System.out.println(money);
+        guillaumeClicker.updateMoneyLabel();
     }
-    public static int getMoney(){
 
+    public static int getMoney() {
         return money;
+    }
+
+    public static Clicker getClicker() {
+        return guillaumeClicker;
     }
 }
