@@ -66,4 +66,8 @@ public class Clicker extends JButton {
     public JLabel getMoneyLabel() {
         return moneyLabel;
     }
+
+    public static void setMoneyPerClick(int moneyPerClick) {
+        Clicker.moneyPerClick = moneyPerClick;
+    }
 }
