@@ -7,6 +7,7 @@ public class AutoClicker extends Upgrade {
 
     private JLabel cpsLabel;
     private int delay;
+    private int costMultiplier;
 
     // No-argument constructor
     public AutoClicker() {
@@ -14,14 +15,17 @@ public class AutoClicker extends Upgrade {
     }
 
     // Constructor with specific parameters
-    public AutoClicker(JPanel panel, String label, int _delay, int x, int y, int width, int height, int _price, String _description, String _imgPath) {
+    public AutoClicker(JPanel panel, String label, int _delay, int _costMultiplier, int x, int y, int width, int height, int _price, String _description, String _imgPath) {
         super(label, x, y, width, height, _price, _description, _imgPath);
+
+
 
         panel.add(this);
         panel.add(getPriceLabel());
         panel.add(getAmountUsedLabel());
 
         delay = _delay;
+        costMultiplier = _costMultiplier;
 
         cpsLabel = new JLabel(delay + "s: $0");
         cpsLabel.setBounds(x, y + height + 45, width, 20);
@@ -53,7 +57,7 @@ public class AutoClicker extends Upgrade {
             Clicker.setNumClicks(currentMoney - getPrice());
 
             // Update the price after the purchase
-            //setPrice((int) (getPrice() * costMultiplier));
+            setPrice((int) (getPrice() * costMultiplier));
             setAmountUsed(getAmountUsed()+1);
             updateLabels();
             updateMoneyLabel();
