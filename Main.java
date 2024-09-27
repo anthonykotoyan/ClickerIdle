@@ -29,16 +29,24 @@ public class Main {
 
         panel = new JPanel();
         panel.setLayout(null);
-        Price nashPrice = new Price(10, "+", 10);
-        ExtraClickUpgrade nashUpgrade = new ExtraClickUpgrade(panel,
+
+        new ExtraClickUpgrade(panel,
                 1,
                 "Neeku",
                 0, 0,
                 100, 100,
-                nashPrice,
-                "Neeku is first",
-                "images/nash.jpg");
+                new Price(10, "+", 10),
+                "Neeku is first you will get. 1 more click, but he costs 10 more after every purchase",
+                "images/neekthegeek.jpeg");
 
+        new MultiplyClickUpgrade(panel,
+                1,
+                "Mr. Nash",
+                0, 500,
+                100, 100,
+                new Price(100, "x", 2),
+                "Neeku is first you will get. 1 more click, but he costs 10 more after every purchase",
+                "images/nash.jpeg");
 
         Price isaacPrice = new Price(100, "+", 100);
         AutoClicker issacUpgrade = new AutoClicker(panel,

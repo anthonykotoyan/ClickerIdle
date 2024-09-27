@@ -7,7 +7,7 @@ import java.io.IOException;
 public class Clicker extends JButton {
     private static int moneyPerClick = 1;
     private static int numClicks = 0;
-
+    private static float moneyMultiplier = 1;
     private static JLabel moneyLabel;
 
     public Clicker(JPanel panel, int x, int y, int width, int height, String imgPath) {
@@ -41,7 +41,7 @@ public class Clicker extends JButton {
     }
 
     public static void onClick() {
-        numClicks += moneyPerClick;
+        numClicks += (int)moneyPerClick*moneyMultiplier;
         Main.setMoney(numClicks);
         updateMoneyLabel();
     }
@@ -61,6 +61,9 @@ public class Clicker extends JButton {
 
     public static void addMoneyPerClick(int extraClicks) {
         moneyPerClick += extraClicks;
+    }
+    public static void addMultiplyPerClick(float _moneyMultiplier) {
+        moneyMultiplier += _moneyMultiplier;
     }
 
     public JLabel getMoneyLabel() {
