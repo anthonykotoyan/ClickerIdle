@@ -30,13 +30,26 @@ public class Main {
         panel = new JPanel();
         panel.setLayout(null);
         Price nashPrice = new Price(10, "+", 10);
-        ExtraClickUpgrade nashUpgrade = new ExtraClickUpgrade(panel, 1, 5, "Mr. Nash", 0, 0, 100, 100, nashPrice, "Our Beautiful Principle, get 1 extra dollar per click", "images/nash.jpg");
+        ExtraClickUpgrade nashUpgrade = new ExtraClickUpgrade(panel,
+                1,
+                "Neeku",
+                0, 0,
+                100, 100,
+                nashPrice,
+                "Neeku is first",
+                "images/nash.jpg");
 
-        Price neekuPrice = new Price(20, "*", 5);
-        ExtraClickUpgrade neekuUpgrade = new ExtraClickUpgrade(panel, 5,10,"Neeku", 150, 0, 100, 100, neekuPrice, "Kinda stinky, but gives 2 extra dollars per click, costs 10x more after every purchase", "images/neekthegeek.jpg");
 
         Price isaacPrice = new Price(100, "+", 100);
-        AutoClicker issacUpgrade = new AutoClicker(panel, "Isaac", 1, 2,300, 0, 100, 100, isaacPrice, "So hopped up on caffeine he just clicks once every 3s", "images/caf-fein.png");
+        AutoClicker issacUpgrade = new AutoClicker(panel,
+                "Isaac",
+                1,
+                300, 0,
+                100,
+                100,
+                isaacPrice,
+                "So hopped up on caffeine he just clicks once every 3s",
+                "images/caf-fein.png");
 
         Price issaraPrice = new Price(0, "+", 0);
         MultiplyPowerUp issaraPowerUp = new MultiplyPowerUp(panel, 5, 100,"Issara", 450, 0,100, 100, issaraPrice, "Kinda bad at coding, but he gets the job done", "images/verosity.jpeg");

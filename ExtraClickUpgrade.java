@@ -7,11 +7,11 @@ public class ExtraClickUpgrade extends Upgrade {
     private float costMultiplier;
     private JLabel extraClicksLabel;
 
-    public ExtraClickUpgrade(JPanel panel, int _extraClicks, float _costMultiplier, String label, int x, int y, int width, int height, Price _price, String _description, String imgPath) {
+    public ExtraClickUpgrade(JPanel panel, int _extraClicks, String label, int x, int y, int width, int height, Price _price, String _description, String imgPath) {
         super(label, x, y, width, height, _price, _description, imgPath);
 
         extraClicks = _extraClicks;
-        costMultiplier = _costMultiplier;
+
 
         // Create and position the extra clicks label
         extraClicksLabel = new JLabel("Extra Clicks: " + extraClicks);
