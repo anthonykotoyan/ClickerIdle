@@ -44,7 +44,7 @@ public class Main {
                 "Issara",
                 150, 0,
                 100, 100,
-                new Price(50, "+", 50),
+                new Price(50, "*", 2),
                 "Issara is a little better than Neeku with 10+ clicks, <br> but costs 50 more per purchase",
                 "images/verosity.jpeg");
 
@@ -55,7 +55,7 @@ public class Main {
                 300, 0,
                 100,
                 100,
-                new Price(500, "+", 50),
+                new Price(500, "+", 1000),
                 "Connor is your fist auto clicker!<br>He clicks every 2 seconds and your <br>current moneyPerClick still applies",
                 "images/connorh.jpeg");
 
