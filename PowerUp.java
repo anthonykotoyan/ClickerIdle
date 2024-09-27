@@ -8,6 +8,8 @@ public class PowerUp extends Upgrade {
 
     private boolean active = false;
 
+    private Timer timer;
+
     public PowerUp(JPanel panel, int _length, String label,
                    int x, int y, int width, int height, Price _price, String _description,
                    String imgPath) {
@@ -46,12 +48,13 @@ public class PowerUp extends Upgrade {
     public void startPowerUp(){
         active = true;
         updateLabels(active);
-        Timer timer = new Timer(length * 1000, new ActionListener() {
+        timer = new Timer(length * 1000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 active = false;
                 stopPowerUp();
                 updateLabels(active);
+                timer.stop();
             }
         });
 

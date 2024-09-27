@@ -1,0 +1,286 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "PowerUp",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1098293148 { 
+   	label=MultiplyPowerUp
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   MultiplyPowerUp1098293148[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)MultiplyPowerUp</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   multiplier: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ logic()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ stopPowerUp()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_1125987204 { 
+   	label=ExtraClickUpgrade
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   ExtraClickUpgrade1125987204[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ExtraClickUpgrade</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   costMultiplier: float [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   extraClicks: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   extraClicksLabel: JLabel [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ onClick()</TD></TR>
+<TR><TD ALIGN="LEFT" >- updateLabels()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_1137311590 { 
+   	label=AutoClicker
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   AutoClicker1137311590[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)AutoClicker</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   costMultiplier: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   cpsLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   delay: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- autoClickersClick()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onClick()</TD></TR>
+<TR><TD ALIGN="LEFT" >- updateLabels()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_1276706400 { 
+   	label=PowerUp
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   PowerUp1276706400[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PowerUp</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   active: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   length: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ logic()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onClick()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ startPowerUp()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ stopPowerUp()</TD></TR>
+<TR><TD ALIGN="LEFT" >- updateLabels(bool: boolean)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_1433481724 { 
+   	label=Upgrade
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Upgrade1433481724[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Upgrade</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   amountUsed: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   amountUsedLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   description: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   imgPath: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   price: Price [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   priceLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   upgradeName: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ onClick()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ updateMoneyLabel()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_1769789419 { 
+   	label=Clicker
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Clicker1769789419[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Clicker</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ addMoneyPerClick(extraClicks: int)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onClick()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ updateMoneyLabel()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_2390489 { 
+   	label=Main
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Main2390489[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Main</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ displayWarning(content: String, imgPath: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ main(args: String[])</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_77381929 { 
+   	label=Price
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Price77381929[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Price</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   modifier: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   price: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   type: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ updatePrice()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+'edges    
+PowerUp1276706400 -> MultiplyPowerUp1098293148[arrowhead=none, arrowtail=empty, dir=both];
+PowerUp1276706400 -> Price77381929[label="onClick() -> updatePrice()"];
+Upgrade1433481724 -> AutoClicker1137311590[arrowhead=none, arrowtail=empty, dir=both];
+Upgrade1433481724 -> Clicker1769789419[label="updateMoneyLabel() -> updateMoneyLabel()"];
+Upgrade1433481724 -> ExtraClickUpgrade1125987204[arrowhead=none, arrowtail=empty, dir=both];
+Upgrade1433481724 -> PowerUp1276706400[arrowhead=none, arrowtail=empty, dir=both];
+Upgrade1433481724 -> Price77381929[label="price
+[0..1]"];
+    
+}
+@enduml
