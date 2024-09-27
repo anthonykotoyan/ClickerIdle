@@ -36,31 +36,31 @@ public class Main {
                 0, 0,
                 100, 100,
                 new Price(10, "+", 10),
-                "Neeku is first you will get. 1 more click, but he costs 10 more after every purchase",
+                "Neeku is first you will get. 1 more click, <br> but he costs 10 more after every purchase",
                 "images/neekthegeek.jpeg");
 
-        new MultiplyClickUpgrade(panel,
-                1,
-                "Mr. Nash",
-                0, 500,
+        new ExtraClickUpgrade(panel,
+                10,
+                "Issara",
+                150, 0,
                 100, 100,
-                new Price(100, "x", 2),
-                "Neeku is first you will get. 1 more click, but he costs 10 more after every purchase",
-                "images/nash.jpeg");
+                new Price(50, "+", 50),
+                "Issara is a little better than Neeku with 10+ clicks, <br> but costs 50 more per purchase",
+                "images/verosity.jpeg");
 
-        Price isaacPrice = new Price(100, "+", 100);
-        AutoClicker issacUpgrade = new AutoClicker(panel,
-                "Isaac",
-                1,
+
+        new AutoClicker(panel,
+                "Connor H",
+                2,
                 300, 0,
                 100,
                 100,
-                isaacPrice,
-                "So hopped up on caffeine he just clicks once every 3s",
-                "images/caf-fein.png");
+                new Price(10, "+", 10),
+                "Connor is your fist auto clicker!<br>He clicks every 2 seconds and your <br>current moneyPerClick still applies",
+                "images/connorh.jpeg");
 
-        Price issaraPrice = new Price(0, "+", 0);
-        MultiplyPowerUp issaraPowerUp = new MultiplyPowerUp(panel, 5, 100,"Issara", 450, 0,100, 100, issaraPrice, "Kinda bad at coding, but he gets the job done", "images/verosity.jpeg");
+
+        //new ExtraClickUpgrade(panel, 5, "Brady", 450, 0,100, 100, new Price(500, "+", 100), "Kinda bad at coding, but he gets the job done", "images/verosity.jpeg");
 
         guillaumeClicker = new Clicker(panel, width / 2 - 100, height / 2 - 100, 200, 200, "images/guillaume.jpg");
 
