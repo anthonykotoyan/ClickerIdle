@@ -55,7 +55,7 @@ public class Main {
                 300, 0,
                 100,
                 100,
-                new Price(10, "+", 10),
+                new Price(500, "+", 50),
                 "Connor is your fist auto clicker!<br>He clicks every 2 seconds and your <br>current moneyPerClick still applies",
                 "images/connorh.jpeg");
 
