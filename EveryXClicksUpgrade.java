@@ -29,10 +29,9 @@ public class EveryXClicksUpgrade extends Upgrade implements Subscriber{
         Clicker.subscribe(this);
     }
 
-    //This function runs when it's supposed to, but doesn't do anything under the print statement...
     private synchronized void everyX() {
         System.out.println("Run");
-        Main.setMoney(Main.getMoney() + (moneyMult * getAmountUsed()));
+        Clicker.setNumClicks(Clicker.getNumClicks() + (moneyMult * getAmountUsed()));
         numClicks = 0;
     }
 
