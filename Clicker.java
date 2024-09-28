@@ -1,5 +1,6 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -9,6 +10,8 @@ public class Clicker extends JButton {
     private static int numClicks = 0;
     private static float moneyMultiplier = 1;
     private static JLabel moneyLabel;
+
+    private static Subscriber[] subscribers;
 
     public Clicker(JPanel panel, int x, int y, int width, int height, String imgPath) {
         super("Clicker");
@@ -44,6 +47,13 @@ public class Clicker extends JButton {
         numClicks += (int)moneyPerClick*moneyMultiplier;
         Main.setMoney(numClicks);
         updateMoneyLabel();
+
+
+        if (subscribers != null) {
+            for (Subscriber subscriber : subscribers) {
+                subscriber.ping();
+            }
+        }
     }
 
     public static void updateMoneyLabel() {
@@ -72,5 +82,18 @@ public class Clicker extends JButton {
 
     public static void setMoneyPerClick(int moneyPerClick) {
         Clicker.moneyPerClick = moneyPerClick;
+    }
+    
+    public static void subscribe(Subscriber s){
+        
+        if (subscribers == null) {
+            subscribers = new Subscriber[1];
+            subscribers[0] = s;
+        } else {
+            Subscriber[] newSubscribers = new Subscriber[subscribers.length + 1];
+            System.arraycopy(subscribers, 0, newSubscribers, 0, subscribers.length);
+            newSubscribers[subscribers.length] = s;
+            subscribers = newSubscribers;
+        }
     }
 }

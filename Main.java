@@ -59,6 +59,17 @@ public class Main {
                 "Connor is your fist auto clicker!<br>He clicks every 2 seconds and your <br>current moneyPerClick still applies",
                 "images/connorh.jpeg");
 
+        new EveryXClicksUpgrade(panel,
+                "Test",
+                2,
+                100,
+                450, 0,
+                100, 100,
+                new Price(0, "+", 0),
+                "Im not sure",
+                "images/tobadsosad.png");
+        
+
         // evan mr guillaume said he will help us make it an exec file on tuesday, or do u alr know how to do that
         //new ExtraClickUpgrade(panel, 5, "Brady", 450, 0,100, 100, new Price(500, "+", 100), "Kinda bad at coding, but he gets the job done", "images/verosity.jpeg");
 

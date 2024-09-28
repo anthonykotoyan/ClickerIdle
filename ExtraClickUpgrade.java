@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.io.IOException;
 
-public class ExtraClickUpgrade extends Upgrade {
+public class ExtraClickUpgrade extends Upgrade{
 
     private int extraClicks;
     private float costMultiplier;
@@ -46,6 +46,4 @@ public class ExtraClickUpgrade extends Upgrade {
         extraClicksLabel.setText("Extra Clicks: " + extraClicks);
         getAmountUsedLabel().setText("You own " + getAmountUsed() + " of these.");
     }
-
-
 }
