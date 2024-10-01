@@ -43,17 +43,19 @@ public class Clicker extends JButton {
         }
     }
 
-    public static void onClick() {
-        numClicks += (int)moneyPerClick*moneyMultiplier;
-        Main.setMoney(numClicks);
-        updateMoneyLabel();
-
-
+    public static void clicked(){
+        onClick();
         if (subscribers != null) {
             for (Subscriber subscriber : subscribers) {
                 subscriber.ping();
             }
         }
+    }
+
+    public static void onClick() {
+        numClicks += (int)moneyPerClick*moneyMultiplier;
+        Main.setMoney(numClicks);
+        updateMoneyLabel();
     }
 
     public static void updateMoneyLabel() {
