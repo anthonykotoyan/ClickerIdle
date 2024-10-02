@@ -22,7 +22,8 @@ public class Main {
                     "music/OMFG-Hello.mp3.wav",
                     "music/Kendrick Lamar-Not Like Us(BRAZILIAN PHONK REMIX)[Clean Version for PE Teachers].wav",
                     "music/RUSHE.wav",
-                    "music/SneakySnitch.wav"
+                    "music/SneakySnitch.wav",
+                    "music/How to make a Video Game in Unity - BASICS (E01).wav"
             };
 
     public static void main(String[] args) throws IOException, UnsupportedAudioFileException, LineUnavailableException {
@@ -196,7 +197,7 @@ public class Main {
                 100, 100,
                 new Price(),
                 "placeholder",
-                "images/a.jpeg");
+                "images/tormanator.jpeg");
 
         
 
@@ -210,6 +211,7 @@ public class Main {
 
         //MUSIC:
         File audioFile = new File(songs[rand.nextInt(songs.length)]); // Replace with your file path
+        //File audioFile = new File("music/How to make a Video Game in Unity - BASICS (E01).wav");
         AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
 
         AudioFormat format = audioStream.getFormat();
