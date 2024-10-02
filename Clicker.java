@@ -23,7 +23,7 @@ public class Clicker extends JButton {
         moneyLabel.setBounds(x, y + height + 5, width, 20);
         panel.add(moneyLabel);
 
-        this.addActionListener(e -> onClick());
+        this.addActionListener(e -> clicked());
         panel.add(this);
     }
 

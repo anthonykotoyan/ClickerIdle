@@ -105,13 +105,13 @@ public class Main {
                 "images/jden.jpeg");
 
         //Anthony
-        new ExtraClickUpgrade(panel,
-                10,
-                "Issara",
+        new MultiplicativeUpgrade(panel,
+                "Anthony",
+                10, 2,
                 900, 0,
                 100, 100,
-                new Price(50, "*", 2),
-                "placeholder",
+                new Price(0, "+", 0),
+                "One of the best programmers in the class!<br>Gain 2x money per 10 clicks",
                 "images/antoine.jpeg");
 
         //Connor G
@@ -126,22 +126,22 @@ public class Main {
 
         //Carti
         new ExtraClickUpgrade(panel,
-                10,
-                "Issara",
+                0,
+                "Playboy Carti",
                 0, 300,
                 100, 100,
-                new Price(50, "*", 2),
-                "placeholder",
+                new Price(500, "*", 5),
+                "Fwaee<br>Ijubeepoppemshengeinilii<br>WeaigobaldrohuhIongiafubounun",
                 "images/carti!!.jpeg");
 
         //Mr. Guillomes Brother
-        new ExtraClickUpgrade(panel,
-                10,
-                "Issara",
+        new MultiplicativeUpgrade(panel,
+                "Mr. Guillaume's Brother",
+                10, 5,
                 1050, 300,
                 100, 100,
-                new Price(50, "*", 2),
-                "placeholder",
+                new Price(0, "+", 0),
+                "Better than everyone<br>Gain 5x money per 10 clicks",
                 "images/brother.jpg");
 
         //Isaac
@@ -152,7 +152,7 @@ public class Main {
                 0, 600,
                 100, 100,
                 new Price(),
-                "placeholder",
+                "Hes so hopped up on caffeine, you get 2x money per click while he is active",
                 "images/caf-fein.png");
 
         //Lincoln
@@ -163,7 +163,7 @@ public class Main {
                 250, 600,
                 100, 100,
                 new Price(),
-                "placeholder",
+                "Lincoln has peak effeciency. While he is active you gain 3x money per click",
                 "images/abraham.jpeg");
 
         //Julian
@@ -174,30 +174,32 @@ public class Main {
                 550, 600,
                 100, 100,
                 new Price(),
-                "placeholder",
+                "Uhhh, I dont know this guy. Anthony does tho...<br>4x money per click while active",
                 "images/senior.jpeg");
-
-        //Evan
-        new MultiplyPowerUp(panel,
-                5,
-                5,
-                "Evan",
-                850, 600,
-                100, 100,
-                new Price(),
-                "placeholder",
-                "images/evan.jpg");
 
         //Mrs. Tormey
         new MultiplyPowerUp(panel,
                 5,
-                3,
+                5,
                 "Mrs. Tormey",
+                850, 600,
+                100, 100,
+                new Price(),
+                "The second best AP Computer Science teacher.<br>She gives you 5x money per click while active",
+                "images/tormanator.jpeg");
+
+        //Evan
+        new MultiplyPowerUp(panel,
+                5,
+                50,
+                "Evan",
                 1050, 600,
                 100, 100,
                 new Price(),
-                "placeholder",
-                "images/tormanator.jpeg");
+                "Absolute beast of a person.<br>He gets all A's, can curl 1000 lbs, and so attractive he could pull any girl he wants.<br>While active, he is generous enough to give you 50x money per click (But he could definitely give you more if he wanted)",
+                "images/evan.jpg");
+
+
 
         
 
