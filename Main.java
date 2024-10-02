@@ -211,7 +211,7 @@ public class Main {
 
         //MUSIC:
         File audioFile = new File(songs[rand.nextInt(songs.length)]); // Replace with your file path
-        //File audioFile = new File("music/How to make a Video Game in Unity - BASICS (E01).wav");
+        //File audioFile = new File("music/Adamation Screaming.wav");
         AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
 
         AudioFormat format = audioStream.getFormat();
@@ -219,6 +219,9 @@ public class Main {
         Clip clip = (Clip) AudioSystem.getLine(info);
 
         clip.open(audioStream);
+
+        clip.setLoopPoints(0, clip.getFrameLength() - 1);
+        clip.loop(Clip.LOOP_CONTINUOUSLY);
         clip.start();
 
     }
