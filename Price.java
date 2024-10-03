@@ -1,7 +1,7 @@
 public class Price {
     private int price;
     private String type;
-    private int modifier;
+    private double modifier;
 
     public int getPrice() {
         return price;
@@ -11,11 +11,11 @@ public class Price {
         return type;
     }
 
-    public int getModifier() {
+    public double getModifier() {
         return modifier;
     }
 
-    public Price(int price, String type, int modifier) {
+    public Price(int price, String type, double modifier) {
         this.price = price;
         this.type = type;
         this.modifier = modifier;

@@ -6,7 +6,7 @@ import java.io.IOException;
 public class AutoClicker extends Upgrade {
 
     private JLabel cpsLabel;
-    private int delay;
+    private float delay;
     private int costMultiplier;
 
     // No-argument constructor
@@ -15,7 +15,7 @@ public class AutoClicker extends Upgrade {
     }
 
     // Constructor with specific parameters
-    public AutoClicker(JPanel panel, String label, int _delay, int x, int y, int width, int height, Price _price, String _description, String _imgPath) {
+    public AutoClicker(JPanel panel, String label, float _delay, int x, int y, int width, int height, Price _price, String _description, String _imgPath) {
         super(label, x, y, width, height, _price, _description, _imgPath);
 
 
@@ -30,7 +30,7 @@ public class AutoClicker extends Upgrade {
         cpsLabel = new JLabel(delay + "s: $0");
         cpsLabel.setBounds(x, y + height + 45, width, 20);
 
-        Timer timer = new Timer(_delay * 1000, new ActionListener() {
+        Timer timer = new Timer((int)(_delay * 1000), new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 autoClickersClick();

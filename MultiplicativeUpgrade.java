@@ -5,9 +5,9 @@ public class MultiplicativeUpgrade extends Upgrade implements Subscriber{
 
     private int numClicks;
     private int clicks;
-    private int mult;
+    private double mult;
 
-    public MultiplicativeUpgrade(JPanel panel, String label, int _clicks, int _mult, int x, int y, int width, int height, Price _price, String _description, String _imgPath) {
+    public MultiplicativeUpgrade(JPanel panel, String label, int _clicks, double _mult, int x, int y, int width, int height, Price _price, String _description, String _imgPath) {
         super(label, x, y, width, height, _price, _description, _imgPath);
         clicks = _clicks;
         mult = _mult;
@@ -42,11 +42,14 @@ public class MultiplicativeUpgrade extends Upgrade implements Subscriber{
 
     @Override
     public void ping() {
-        numClicks += 1;
+        if (getAmountUsed() > 0){
+            numClicks += 1;
 
-        if (numClicks == clicks) {
-            changePerc();
+            if (numClicks == clicks) {
+                changePerc();
+            }
         }
+
     }
 
     public void changePerc(){

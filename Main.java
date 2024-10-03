@@ -86,52 +86,52 @@ public class Main {
 
         //Caden
         new ExtraClickUpgrade(panel,
-                10,
+                1000,
                 "Caden",
                 600, 0,
                 100, 100,
-                new Price(50, "*", 2),
-                "placeholder",
+                new Price(100, "*", 2),
+                "Caden Gives you 1000 per , but he gets expenive fast",
                 "images/VanPelt.jpeg");
 
         //Jayden
-        new ExtraClickUpgrade(panel,
-                10,
+        new AutoClicker(panel,
                 "Jayden",
+                0.1f,
                 750, 0,
                 100, 100,
-                new Price(50, "*", 2),
-                "placeholder",
+                new Price(10000, "+", 10000),
+                "Very fast auto clicker",
                 "images/jden.jpeg");
 
         //Anthony
         new MultiplicativeUpgrade(panel,
                 "Anthony",
-                10, 2,
+                100, 1.25,
                 900, 0,
                 100, 100,
-                new Price(0, "+", 0),
-                "One of the best programmers in the class!<br>Gain 2x money per 10 clicks",
+                new Price(10000, "*", 1.5),
+                "One of the best programmers in the class!<br>Gain 1.25x money per 100 clicks",
                 "images/antoine.jpeg");
 
         //Connor G
         new ExtraClickUpgrade(panel,
-                10,
-                "Issara",
+                100000,
+                "Connor G",
                 1050, 0,
                 100, 100,
-                new Price(50, "*", 2),
-                "placeholder",
+                new Price(1000, "*", 2),
+                "Connor is gives you 100,000 extra clicks for a low price but it grows fasst",
                 "images/connor2.jpeg");
 
         //Carti
         new ExtraClickUpgrade(panel,
-                0,
+                -999999999,
                 "Playboy Carti",
                 0, 300,
                 100, 100,
-                new Price(500, "*", 5),
-                "Fwaee<br>Ijubeepoppemshengeinilii<br>WeaigobaldrohuhIongiafubounun",
+                new Price(999999999, "*", 5),
+                "Fwaee<br>Ijubeepoppemshengeinilii<br>WeaigobaldrohuhIongiafubounun - goat",
                 "images/carti!!.jpeg");
 
         //Mr. Guillomes Brother
@@ -140,7 +140,7 @@ public class Main {
                 10, 5,
                 1050, 300,
                 100, 100,
-                new Price(0, "+", 0),
+                new Price(10000000, "*", 5),
                 "Better than everyone<br>Gain 5x money per 10 clicks",
                 "images/brother.jpg");
 
@@ -151,7 +151,7 @@ public class Main {
                 "Isaac",
                 0, 600,
                 100, 100,
-                new Price(),
+                new Price(100000, "*", 5),
                 "Hes so hopped up on caffeine, you get 2x money per click while he is active",
                 "images/caf-fein.png");
 
@@ -162,7 +162,7 @@ public class Main {
                 "Lincoln",
                 250, 600,
                 100, 100,
-                new Price(),
+                new Price(5000000, "*", 5),
                 "Lincoln has peak effeciency. While he is active you gain 3x money per click",
                 "images/abraham.jpeg");
 
@@ -173,7 +173,7 @@ public class Main {
                 "Julian",
                 550, 600,
                 100, 100,
-                new Price(),
+                new Price(1000000, "*", 5),
                 "Uhhh, I dont know this guy. Anthony does tho...<br>4x money per click while active",
                 "images/senior.jpeg");
 
@@ -184,7 +184,7 @@ public class Main {
                 "Mrs. Tormey",
                 850, 600,
                 100, 100,
-                new Price(),
+                new Price(500000000, "*", 5),
                 "The second best AP Computer Science teacher.<br>She gives you 5x money per click while active",
                 "images/tormanator.jpeg");
 
@@ -195,7 +195,7 @@ public class Main {
                 "Evan",
                 1050, 600,
                 100, 100,
-                new Price(),
+                new Price(500000000, "^", 2),
                 "Absolute beast of a person.<br>He gets all A's, can curl 1000 lbs, and so attractive he could pull any girl he wants.<br>While active, he is generous enough to give you 50x money per click (But he could definitely give you more if he wanted)",
                 "images/evan.jpg");
 
